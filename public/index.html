@@ -26,9 +26,9 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body style="background: black;">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <button id="start"> Start </button>
+    <button id="start" style="width:500px; height: 300px; margin: auto; margin-top: 100px"> Click here to start Audio</button>
     <div id="loading"> Loading ... </div>
     <script src="webpd-runtime.js"></script>
     <script>
@@ -94,6 +94,7 @@
 
             // Hide the start button
             startButton.style.display = 'none'
+            document.getElementById("root").style.display = ""
         }
 
         startButton.onclick = startApp
@@ -179,7 +180,7 @@
 
     </script>
 
-    <div id="root"></div>
+    <div id="root" style="display: none"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
