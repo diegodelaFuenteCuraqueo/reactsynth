@@ -21,16 +21,20 @@ function Key({midinote, isBlackKey}) {
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       style={{
-        width: "50px",
+        width: isBlackKey ? "35px" : "60px",
         height: isBlackKey ? "120px" : "200px",
         border: "1px solid black",
         color: "gray",
-        marginLeft: isBlackKey ? "-10px" : "0", // Adjust for the positioning of black keys
-        marginRight: isBlackKey ? "-10px" : "0",
+        marginLeft: isBlackKey ? "-25px" : "0", // Adjust for the positioning of black keys
+        marginRight: isBlackKey ? "-25px" : "0",
         zIndex: isBlackKey ? 1 : 0,
         backgroundColor: isBlackKey
           ? (isPressed ? "red" : "black")
           : (isPressed ? "red" : "white"),
+        display: "flex",
+        flexDirection: "column", // Align text at the bottom
+        alignItems: "center",
+        justifyContent: "flex-end",
       }}
     >
       { midinote }
