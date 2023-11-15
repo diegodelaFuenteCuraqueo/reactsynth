@@ -34,7 +34,7 @@ const Synth = () => {
   }
 
   return (
-    <div>
+    <div style={{width:"400px"}}>
       <p>Synth</p>
       <div>
         <Slider label="harmonicity" min={0} max={10} value={1} onChange={harmChange} />

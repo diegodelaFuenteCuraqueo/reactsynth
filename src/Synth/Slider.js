@@ -12,11 +12,12 @@ function Slider({label, min=0, max=127, value, onChange}) {
   return (
     <div>
       <label>{label} : {sliderValue}</label>
+      <br/>
       <input
+        style={{width: "100%"}}
         type="range"
         min={min}
         max={max}
-        value={value}
         step={0.01}
         onChange={handleSliderChange}
       />
