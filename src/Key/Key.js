@@ -1,18 +1,43 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import eventEmitter from "../EventEmitter/eventEmitter"
 
 function Key({midinote, isBlackKey}) {
+
   const [isPressed, setIsPressed] = useState(false)
+
+  useEffect(() => {
+    const handleNoteOn = ({ note }) => {
+      if (note === midinote) {
+        setIsPressed(true)
+        handleMouseDown()
+      }
+    }
+
+    const handleNoteOff = ({ note }) => {
+      if (note === midinote) {
+        setIsPressed(false)
+        handleMouseUp()
+      }
+    }
+
+    eventEmitter.on('noteOn', handleNoteOn)
+    eventEmitter.on('noteOff', handleNoteOff)
+
+    return () => {
+      eventEmitter.removeListener('noteOn', handleNoteOn)
+      eventEmitter.removeListener('noteOff', handleNoteOff)
+    }
+  }, [midinote])
 
   const handleMouseDown = () => {
     setIsPressed(true)
-    eventEmitter.emit('noteOn', { midinote, velocity : 127 })
+    eventEmitter.emit('noteBtnOn', { midinote, velocity : 127 })
     console.log('Button pressed')
   }
 
   const handleMouseUp = () => {
     setIsPressed(false)
-    eventEmitter.emit('noteOff', { midinote, velocity : 0 })
+    eventEmitter.emit('noteBtnOff', { midinote, velocity : 0 })
     console.log('Button released')
   }
 

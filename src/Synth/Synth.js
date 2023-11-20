@@ -16,12 +16,12 @@ const Synth = () => {
       window.sendMsgToWebPd("n_0_32" , "0" , [1]) // voice
     }
 
-    eventEmitter.on('noteOn', listenerPressed)
-    eventEmitter.on('noteOff', listenerReleased)
+    eventEmitter.on('noteBtnOn', listenerPressed)
+    eventEmitter.on('noteBtnOff', listenerReleased)
 
     return () => {
-      eventEmitter.removeListener('noteOn', listenerPressed)
-      eventEmitter.removeListener('noteOff', listenerReleased)
+      eventEmitter.removeListener('noteBtnOn', listenerPressed)
+      eventEmitter.removeListener('noteBtnOff', listenerReleased)
     }
   }, [])
 
