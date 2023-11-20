@@ -35,10 +35,10 @@ const MidiInput = () => {
         if (command === 254) return
         switch (command) {
           case 144:
-            eventEmitter.emit('noteOn', { note: note, velocity, device: name })
+            eventEmitter.emit('noteOn', { midinote: note, vel: velocity, device: name })
             break
           case 128:
-            eventEmitter.emit('noteOff', { note: note, velocity, device: name })
+            eventEmitter.emit('noteOff', { midinote: note, vel: 0, device: name })
             break
           default:
             console.log('Unknown command', command)

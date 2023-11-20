@@ -11,9 +11,8 @@ function Keyboard() {
 
   for (let midinote = firstKey; midinote <= firstKey+numberOfKeys; midinote++) {
     const isBlackKey = [1, 3, 6, 8, 10].includes(midinote % 12);
-    keys.push(<Key key={midinote} midinote={midinote} isBlackKey={isBlackKey} />);
+    keys.push(<Key key={midinote} keynote={midinote} isBlackKey={isBlackKey} />);
   }
-
 
   return (
     <div className="keyboard-container">
@@ -46,7 +45,7 @@ function Keyboard() {
             onChange={(event) => setNumberOfKeys(parseInt(event.target.value))}
           />
         </div>
-      </div> 
+      </div>
       <div style={{ display: "flex" , justifyContent: "center"}}>{keys}</div>
     </div>
 

@@ -1,0 +1,18 @@
+#N canvas 524 22 836 526 12;
+#X obj 21 121 fm, f 21;
+#X obj 23 221 *~;
+#X obj 91 19 r fm-harm;
+#X obj 169 17 r fm-mod;
+#X obj 22 268 outlet~;
+#X obj 21 19 inlet;
+#X obj 265 150 inlet~;
+#X obj 91 76 line~ 20;
+#X obj 167 75 line~ 20;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 7 0;
+#X connect 3 0 8 0;
+#X connect 5 0 0 0;
+#X connect 6 0 1 1;
+#X connect 7 0 0 1;
+#X connect 8 0 0 2;

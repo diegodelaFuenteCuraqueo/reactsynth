@@ -2,22 +2,20 @@ import React, { useState, useEffect } from "react"
 import eventEmitter from "../EventEmitter/eventEmitter"
 import "./Key.css"
 
-function Key({midinote, isBlackKey}) {
+function Key({keynote, isBlackKey}) {
 
   const [isPressed, setIsPressed] = useState(false)
 
   useEffect(() => {
-    const handleNoteOn = ({ note }) => {
-      if (note === midinote) {
+    const handleNoteOn = ({ midinote }) => {
+      if (midinote === keynote) {
         setIsPressed(true)
-        handleMouseDown()
       }
     }
 
-    const handleNoteOff = ({ note }) => {
-      if (note === midinote) {
+    const handleNoteOff = ({ midinote }) => {
+      if (midinote === keynote) {
         setIsPressed(false)
-        handleMouseUp()
       }
     }
 
@@ -28,18 +26,16 @@ function Key({midinote, isBlackKey}) {
       eventEmitter.removeListener('noteOn', handleNoteOn)
       eventEmitter.removeListener('noteOff', handleNoteOff)
     }
-  }, [midinote])
+  }, [])
 
   const handleMouseDown = () => {
     setIsPressed(true)
-    eventEmitter.emit('noteBtnOn', { midinote, velocity : 127 })
-    console.log('Button pressed')
+    eventEmitter.emit('noteOn', { midinote: keynote, vel: 60 })
   }
 
   const handleMouseUp = () => {
     setIsPressed(false)
-    eventEmitter.emit('noteBtnOff', { midinote, velocity : 0 })
-    console.log('Button released')
+    eventEmitter.emit('noteOff', { midinote: keynote, vel : 0 })
   }
 
   return (
@@ -47,24 +43,8 @@ function Key({midinote, isBlackKey}) {
       className={`keyButton ${isBlackKey ? 'isBlackKey' : ''} ${isPressed ? 'isPressed' : ''}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
-      style={{
-        width: isBlackKey ? "35px" : "60px",
-        height: isBlackKey ? "120px" : "200px",
-        border: "1px solid black",
-        color: "gray",
-        marginLeft: isBlackKey ? "-25px" : "0", // Adjust for the positioning of black keys
-        marginRight: isBlackKey ? "-25px" : "0",
-        zIndex: isBlackKey ? 1 : 0,
-        backgroundColor: isBlackKey
-          ? (isPressed ? "red" : "black")
-          : (isPressed ? "red" : "white"),
-        display: "flex",
-        flexDirection: "column", // Align text at the bottom
-        alignItems: "center",
-        justifyContent: "flex-end",
-      }}
     >
-      { midinote }
+      { keynote }
     </button>
   )
 
