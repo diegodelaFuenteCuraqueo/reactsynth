@@ -1,0 +1,14 @@
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  width: 38%;
+}
+
+.slider-label {
+  margin-bottom: 8px;
+}
+
+.slider-input {
+  width: 100%;
+}

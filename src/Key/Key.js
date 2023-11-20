@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import eventEmitter from "../EventEmitter/eventEmitter"
+import "./Key.css"
 
 function Key({midinote, isBlackKey}) {
 
@@ -43,6 +44,7 @@ function Key({midinote, isBlackKey}) {
 
   return (
     <button
+      className={`keyButton ${isBlackKey ? 'isBlackKey' : ''} ${isPressed ? 'isPressed' : ''}`}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       style={{

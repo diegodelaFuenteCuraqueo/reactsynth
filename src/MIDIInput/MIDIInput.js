@@ -62,12 +62,11 @@ const MidiInput = () => {
         }
       }
     }
-  }, []) // Dependency array to ensure cleanup on unmount
+  }, [])
 
   return (
     <div>
-      <p>MIDI Input Component</p>
-      {/* Render your component UI here */}
+      <p>MIDI Input Component Active</p>
     </div>
   )
 }

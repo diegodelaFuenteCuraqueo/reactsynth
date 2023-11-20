@@ -1,0 +1,31 @@
+/* Common styles for the button */
+.keyButton {
+  border: 1px solid black;
+  color: gray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Styles for black keys */
+.keyButton.isBlackKey {
+  width: 35px;
+  height: 120px;
+  margin-left: -25px; /* Adjust for the positioning of black keys */
+  margin-right: -25px;
+  z-index: 1;
+  background-color: black;
+}
+
+/* Styles for white keys */
+.keyButton:not(.isBlackKey) {
+  width: 60px;
+  height: 200px;
+  background-color: white;
+}
+
+/* Styles for pressed keys */
+.keyButton.isPressed {
+  background-color: red;
+}

@@ -1,4 +1,5 @@
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Keyboard from './Keyboard/Keyboard.js'
 import Synth from './Synth/Synth.js'
 import MIDIInput from './MIDIInput/MIDIInput.js'
@@ -29,9 +30,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Synth />
-        <Keyboard />
-        <MIDIInput />
+        <div style={{width:"90%"}}>
+          <Synth />
+          <Keyboard />
+          <MIDIInput />
+        </div>
       </header>
     </div>
   );

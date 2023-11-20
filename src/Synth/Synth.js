@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import eventEmitter from "../EventEmitter/eventEmitter"
-import Slider from "../Synth/Slider.js"
+import Slider from "../Slider/Slider.js"
+import "./Synth.css"
 
 const Synth = () => {
   useEffect(() => {
@@ -34,9 +35,9 @@ const Synth = () => {
   }
 
   return (
-    <div style={{width:"400px"}}>
+    <div className="synth-container">
+      <div className="synth-content">
       <p>Synth</p>
-      <div>
         <Slider label="harmonicity" min={0} max={10} value={1} onChange={harmChange} />
         <Slider label="modulation index" min={0} max={1000} value={1} onChange={modIndxChange} />
       </div>
