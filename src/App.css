@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.background {
+  background-image: url('https://images.pexels.com/photos/3490393/pexels-photo-3490393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+  background-size: cover;
+  background-position: center;
+}

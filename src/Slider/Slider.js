@@ -19,6 +19,7 @@ function Slider({label, min=0, max=127, value, onChange}) {
       <label className="slider-label">{label} : <small>{sliderValue}</small></label>
       <input
         style={{width: "100%"}}
+        className="slider"
         type="range"
         min={min}
         max={max}

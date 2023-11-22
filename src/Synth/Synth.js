@@ -57,7 +57,7 @@ const Synth = () => {
   return (
     <div className="synth-container">
       <div className="synth-content">
-      <p>Synth</p>
+      <p>FM Synth</p>
         <Slider label="harmonicity" min={0} max={10} value={ harm } onChange={harmChange} />
         <Slider label="modulation index" min={0} max={1000} value={ modIndx } onChange={modIndxChange} />
       </div>

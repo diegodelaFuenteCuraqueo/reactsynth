@@ -29,13 +29,13 @@ import PresetPick from './PresetPick/PresetPick.js';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="App" >
+      <header className="App-header background" style={{justifyContent: "flex-start"}}>
         <div style={{width:"90%"}}>
           <PresetsProvider>
-            <PresetPick />
             <Synth />
             <Keyboard />
+            <PresetPick />
             <MIDIInput />
           </PresetsProvider>
         </div>

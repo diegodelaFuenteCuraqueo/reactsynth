@@ -1,11 +1,19 @@
 .synth-container {
+  filter: none;
   width: 100%;
-  margin: 20px 20px;
+  margin: 10px 20px;
+  background-image: url("https://www.texturex.com/wp-content/uploads/2018/03/dark-brushed-metal-texture-steel-black-stock-photo-scratch-wallpaper-5-1024x768.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.8);
 }
 
 .synth-content {
+  padding-bottom: 20px;
+  padding-top: 20px;
   width: 100%;
-  border: 1px solid blue;
   display: flex;
   justify-content: space-evenly;
 }

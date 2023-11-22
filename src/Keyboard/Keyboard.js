@@ -29,12 +29,12 @@ function Keyboard() {
       <div className="controls">
         <p>Keyboard</p>
         <div className="config">
-
-          <label>Lower</label>
+          <label>Lower key</label>
           <input
             type="number"
             min={0}
             max={72}
+            className="form-control"
             value={firstKey}
             step={1}
             style={{width: "100px", margin:"auto"}}
@@ -43,12 +43,12 @@ function Keyboard() {
         </div>
 
         <div className="config">
-          <label>Number</label>
-
+          <label>Number of keys</label>
           <input
             type="number"
             min={1}
             max={60}
+            className="form-control"
             value={numberOfKeys}
             step={1}
             style={{width: "100px", margin:"auto"}}
@@ -56,7 +56,7 @@ function Keyboard() {
           />
         </div>
       </div>
-      <div style={{ display: "flex" , justifyContent: "center"}}>{keys}</div>
+      <div style={{ display: "flex" , justifyContent: "center", marginTop: "40px"}}>{keys}</div>
     </div>
 
   )
