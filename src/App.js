@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Keyboard from './Keyboard/Keyboard.js'
 import Synth from './Synth/Synth.js'
 import MIDIInput from './MIDIInput/MIDIInput.js'
-
+import PresetsProvider from './PresetsProvider/PresetsProvider.js'
+import PresetPick from './PresetPick/PresetPick.js';
 //function onMIDIMessage(name) {
 //  return function(event) {
 //    const [command, note, velocity] = event.data
@@ -31,9 +32,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div style={{width:"90%"}}>
-          <Synth />
-          <Keyboard />
-          <MIDIInput />
+          <PresetsProvider>
+            <PresetPick />
+            <Synth />
+            <Keyboard />
+            <MIDIInput />
+          </PresetsProvider>
         </div>
       </header>
     </div>

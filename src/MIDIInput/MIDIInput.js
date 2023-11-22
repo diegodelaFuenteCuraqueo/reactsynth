@@ -5,8 +5,8 @@ const MidiInput = () => {
   const [midiAccess, setMidiAccess] = useState(null)
 
   useEffect(() => {
-    if (navigator.requestMIDIAccess) {    // Check for Web MIDI API support
-      navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure) // Request MIDI access
+    if (navigator.requestMIDIAccess) {
+      navigator.requestMIDIAccess().then(onMIDISuccess, onMIDIFailure)
     } else {
       console.error('Web MIDI API is not supported in this browser.')
     }

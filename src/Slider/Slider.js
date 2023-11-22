@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import "./Slider.css"
 
 function Slider({label, min=0, max=127, value, onChange}) {
@@ -10,6 +10,10 @@ function Slider({label, min=0, max=127, value, onChange}) {
     onChange(newValue)
   }
 
+  useEffect(() => {
+    setSliderValue(value)
+  }, [value])
+
   return (
     <div className="slider-container">
       <label className="slider-label">{label} : <small>{sliderValue}</small></label>
@@ -19,6 +23,7 @@ function Slider({label, min=0, max=127, value, onChange}) {
         min={min}
         max={max}
         step={0.01}
+        value={sliderValue}
         onChange={handleSliderChange}
       />
     </div>
